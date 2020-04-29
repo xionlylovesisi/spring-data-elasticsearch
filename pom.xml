@@ -339,50 +339,5 @@
 		</plugins>
 	</build>
 
-	<profiles>
-		<profile>
-
-			<id>ci</id>
-
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-checkstyle-plugin</artifactId>
-						<configuration>
-							<checkstyleRules>
-								<module name="Checker">
-
-									<!-- Configure checker to use UTF-8 encoding -->
-									<property name="charset" value="UTF-8"/>
-
-									<module name="io.spring.nohttp.checkstyle.check.NoHttpCheck"/>
-								</module>
-							</checkstyleRules>
-							<includes>**/*</includes>
-							<excludes>.git/**/*,target/**/*,**/target/**/*,.idea/**/*,**/spring.schemas,**/*.svg,mvnw,mvnw.cmd,**/*.policy</excludes>
-							<sourceDirectories>./</sourceDirectories>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-
-		</profile>
-
-	</profiles>
-
-	<repositories>
-		<repository>
-			<id>spring-libs-snapshot</id>
-			<url>https://repo.spring.io/libs-snapshot</url>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-plugins-release</id>
-			<url>https://repo.spring.io/plugins-release</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
